@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/carnet}
+    username: ${DB_USER:carnet}
+    password: ${DB_PASSWORD:carnet}
+  jpa:
+    hibernate:
+      ddl-auto: validate   # Hibernate vérifie que les entités correspondent au schéma
+    open-in-view: false
+  flyway:
+    enabled: true
+  server:
+    address: 0.0.0.0
+    error:
+    include-message: always
+    include-binding-errors: always
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration-days: 30
